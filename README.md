@@ -1,2 +1,5 @@
-# mobile-game-gating-ab-test
-Experimentation analysis evaluating player progression gates using non-parametric testing and retention metrics, resulting in a Do Not Roll Out decision.
+# GameFlow Progression Gating — A/B Test Analysis
+
+> *When a statistically significant metric is not enough to justify shipping.*
+
+> Product Analytics | Experimentation | Decision Ownership

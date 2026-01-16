@@ -4,7 +4,7 @@
 
 ![Status: Concluded](https://img.shields.io/badge/Status-Concluded-success) ![Outcome: Negative](https://img.shields.io/badge/Outcome-Negative_Result-red) ![Stat Test: Mann--Whitney_U](https://img.shields.io/badge/Stat_Test-Mann--Whitney_U-blue) ![Metric: Retention](https://img.shields.io/badge/Metric-Retention_%26_Engagement-orange)
 
-> *When a statistically significant metric is not sufficient to justify shipping.*
+> *This experiment evaluates whether delaying progression access improves long-term player outcomes without introducing engagement or experience risk.*
 
 > **Product Analytics | Experimentation | Decision Ownership**
 
@@ -122,6 +122,18 @@ Each metric was evaluated independently, then interpreted **together** for the f
   - Statistically significant improvement for **Gate 30**  
   - **Lift:** ~4.3%  
   - **p-value:** ~0.002
+
+---
+
+## ⚖️ Why a Partial Metric Win Was Not Enough
+
+Progression systems are foundational mechanics.
+
+While Gate 40 showed a statistically significant improvement in Day-7 retention, it failed to improve engagement depth and increased progression friction. Optimizing for a single retention metric without reinforcing play depth risks hollow retention that does not translate into long-term value.
+
+For core mechanics, **metric wins must be system-level wins**.
+
+Shipping Gate 40 would have optimized a number while degrading the player experience. Rejecting it was the correct decision.
 
 ---
 

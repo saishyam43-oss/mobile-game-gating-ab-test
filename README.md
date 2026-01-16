@@ -86,6 +86,10 @@ The traffic split was balanced, indicating **no Sample Ratio Mismatch (SRM)**.
 
 ## 🔍 Metrics & Methodology
 
+<p align="center">
+  <img src="images/experiment_methodology.png" >
+</p>
+
 ### 🧠 Statistical Methodology: Why Mann-Whitney U?
 
 Engagement data (Game Rounds) followed a **power-law distribution** (highly right-skewed). Most users play 1-2 rounds, while "whales" play 100+.

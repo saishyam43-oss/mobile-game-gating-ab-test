@@ -1,9 +1,12 @@
-# PlayGate Progression Gating — A/B Test Analysis  
+<h1 align="center"> 🎮 PlayGate: Progression Gating Experiment </h1>
+
 *Gate 30 vs Gate 40*
+
+![Status: Concluded](https://img.shields.io/badge/Status-Concluded-success) ![Outcome: Negative](https://img.shields.io/badge/Outcome-Negative_Result-red) ![Stat Test: Mann--Whitney_U](https://img.shields.io/badge/Stat_Test-Mann--Whitney_U-blue) ![Metric: Retention](https://img.shields.io/badge/Metric-Retention_%26_Engagement-orange)
 
 > *When a statistically significant metric is not sufficient to justify shipping.*
 
-> Product Analytics | Experimentation | Decision Ownership
+> **Product Analytics | Experimentation | Decision Ownership**
 
 ---
 
@@ -74,7 +77,8 @@ This experiment was evaluated across **multiple metrics**, not a single success 
 ### Sample Size
 - **Gate 30:** 44,699 users  
 - **Gate 40:** 45,489 users  
-- **Total:** 90,188 users  
+- **Total:** 90,188 users
+- **SRM Check:** A Chi-Square Goodness-of-Fit test confirmed the traffic split (49.6% vs 50.4%) was statistically valid (p = 0.42), ruling out assignment latency or instrumentation bugs.  
 
 The traffic split was balanced, indicating **no Sample Ratio Mismatch (SRM)**.
 
@@ -82,10 +86,12 @@ The traffic split was balanced, indicating **no Sample Ratio Mismatch (SRM)**.
 
 ## 🔍 Metrics & Methodology
 
-### Engagement Metric
-- **Metric:** Total game rounds played  
-- **Distribution:** Heavily right-skewed  
-- **Statistical Test:** Mann–Whitney U test (median-based)
+### 🧠 Statistical Methodology: Why Mann-Whitney U?
+
+Engagement data (Game Rounds) followed a **power-law distribution** (highly right-skewed). Most users play 1-2 rounds, while "whales" play 100+.
+
+- **The Risk:** A standard **T-Test** (comparing means) would be biased by the "whales," potentially showing a false positive lift even if the median player had a worse experience.
+- **The Solution:** I utilized the **Mann-Whitney U test** (a non-parametric rank-sum test) to compare **distributions** rather than averages. This ensured the decision reflected the experience of the *typical* player, not just the outliers.
 
 > Mean-based tests were explicitly avoided to prevent distortion from extreme outliers.
 
@@ -117,15 +123,16 @@ Each metric was evaluated independently, then interpreted **together** for the f
 
 ## 📌 Decision Rationale
 
-This experiment produced **conflicting signals**, which is where judgment matters most.
+This experiment produced **conflicting signals**, requiring a trade-off between retention and engagement depth.
 
-- Gate 30 showed a **clear Day-7 retention advantage**
-- Gate 40 showed **no engagement improvement**
-- Introducing later gating increases perceived friction and progression risk
+**The Trade-off:**
+* **Retention Signal:** Gate 30 (Control) maintained a **+4.3% lift** in D7 Retention (p = 0.002).
+* **Engagement Signal:** Gate 40 (Treatment) showed **no lift** in median game rounds (p = 0.05).
 
-For a core gameplay mechanic, **retention gains must be supported by healthy engagement**. Optimizing retention alone, without reinforcing engagement, risks long-term player dissatisfaction and churn.
+**The Verdict:**
+We prioritize **Retention** as the foundational proxy for product-market fit. Since the new gate (Gate 40) degraded retention without adding engagement depth, it represents a net-negative change to the player economy.
 
-**Decision:** ❌ **Do Not Roll Out Gate 40**
+**Action:** 🛑 **Reject Gate 40. Maintain Gate 30.**
 
 ---
 

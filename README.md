@@ -27,7 +27,10 @@ Shipping Gate 40 would optimize for a single metric while degrading the overall 
 
 > *Executive view of engagement, retention, and final recommendation*
 
-![Game Gating A/B Test Dashboard](images/dashboard_summary.png)
+<p align="center">
+  <img src="images/page_01.png" width="45%">
+  <img src="images/page_02.png" width="45.5%">
+</p>
 
 ---
 
